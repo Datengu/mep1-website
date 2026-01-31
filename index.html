@@ -1,0 +1,228 @@
+﻿<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEP1BIM – MEP & BIM Services</title>
+    <link rel="icon" type="image/png" href="images/FaviconLogo.png">
+    <link rel="shortcut icon" href="images/FaviconLogo.png" type="image/png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="flex flex-col min-h-screen font-sans">
+
+    <!-- Header -->
+    <header class="bg-white shadow sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-3">
+                    <a href="#">
+                        <img src="images/SVGLogo.svg" alt="MEP1BIM Logo"
+                             class="h-24 w-auto hover:opacity-80 transition-opacity duration-200" />
+                    </a>
+                </div>
+
+                <!-- Desktop nav -->
+                <nav class="hidden md:flex space-x-6 text-lg font-semibold text-slate-700">
+                    <a href="#services" class="nav-link">Services</a>
+                    <a href="#projects" class="nav-link">Projects</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                </nav>
+
+                <!-- Mobile toggle button -->
+                <button id="nav-toggle"
+                        type="button"
+                        class="md:hidden inline-flex items-center justify-center rounded border border-slate-300 px-3 py-2 text-slate-700 hover:bg-slate-50"
+                        aria-controls="mobile-menu"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation">
+                    <span id="nav-toggle-open" class="inline">Menu</span>
+                    <span id="nav-toggle-close" class="hidden">Close</span>
+                </button>
+            </div>
+
+            <!-- Mobile menu -->
+            <nav id="mobile-menu" class="hidden md:hidden mt-3 border-t pt-3 text-slate-700">
+                <div class="flex flex-col space-y-2 text-base font-semibold">
+                    <a href="#services" class="nav-link py-2">Services</a>
+                    <a href="#projects" class="nav-link py-2">Projects</a>
+                    <a href="#contact" class="nav-link py-2">Contact</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-background py-12 md:py-20">
+        <div id="hero-content" class="max-w-4xl mx-auto text-center px-6 py-8 bg-white/85 border border-gray-200 rounded-xl shadow-lg backdrop-blur-sm opacity-0 translate-y-4 transition-all duration-1000 ease-out">
+            <h2 class="text-3xl md:text-4xl font-bold text-slate-800 mb-4">
+                Precision MEP & BIM Support for London's Landmark Projects
+            </h2>
+            <h2 class="text-3xl font-semibold text-slate-700 mb-4">
+                From electrical expertise to full MEP coordination and BIM delivery—on time, every time.
+            </h2>
+            <p class="text-lg text-slate-600 max-w-2xl mx-auto mb-6">
+                With 30+ years of experience in electrical and mechanical systems, MEP1 BIM specialises in coordinated Revit models, COBie data, and clash-free MEP delivery for some of the UK’s most iconic builds.
+            </p>
+            <div class="flex justify-center gap-4 flex-wrap">
+                <a href="#projects" class="border bg-white border-green-800 text-green-800 px-6 py-3 rounded hover:bg-green-50 transition">
+                    See Our Projects
+                </a>
+                <a href="#contact" class="bg-green-700 text-white px-6 py-3 rounded hover:bg-green-800 transition">
+                    Get in Touch
+                </a>
+            </div>
+
+            <!-- Projects supported (responsive) -->
+            <div class="mt-8 text-center text-sm md:grayscale md:opacity-70">
+                <!-- Mobile: ticker chips -->
+                <div class="md:hidden">
+                    <div class="text-xs font-semibold text-slate-600 mb-2">
+                        Projects supported
+                    </div>
+
+                    <div class="ticker" aria-label="Projects supported">
+                        <div class="ticker-track">
+                            <!-- Set 1 -->
+                            <span class="ticker-chip">Tower of London Jewel House</span>
+                            <span class="ticker-chip">Shakespeare Theatre</span>
+                            <span class="ticker-chip">Buckingham Palace</span>
+                            <span class="ticker-chip">The Shard</span>
+                            <span class="ticker-chip">Cheese Grater</span>
+                            <span class="ticker-chip">Walkie Talkie</span>
+
+                            <!-- Set 2 (duplicate for seamless loop) -->
+                            <span class="ticker-chip">Tower of London Jewel House</span>
+                            <span class="ticker-chip">Shakespeare Theatre</span>
+                            <span class="ticker-chip">Buckingham Palace</span>
+                            <span class="ticker-chip">Cheese Grater</span>
+                            <span class="ticker-chip">Walkie Talkie</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Desktop: full list -->
+                <div class="hidden md:flex justify-center flex-wrap gap-2">
+                    <span class="font-semibold">Projects supported:</span>
+                    <span>Tower Of London Jewel House</span> ·
+                    <span>Shakespeare Theatre</span> ·
+                    <span>Buckingham Palace</span> ·
+                    <span>The Shard</span> ·
+                    <span>Cheese Grater</span> ·
+                    <span>Walkie Talkie</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Placeholder Sections -->
+    <main class="flex-grow max-w-6xl mx-auto p-6 space-y-16">
+        <section id="services" class="section-offset">
+            <h3 class="text-2xl font-bold mb-8">Our Services</h3>
+
+            <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+                <!-- Card -->
+                <article class="border rounded-lg p-6 shadow hover:shadow-lg transition">
+                    <i data-feather="tool" class="w-6 h-6 mb-3 text-green-600"></i>
+                    <h4 class="text-xl font-semibold mb-2">MEP Design &amp; Coordination</h4>
+                    <p class="text-sm mb-4">Fully-integrated mechanical, electrical &amp; public-health layouts that minimise clashes before site.</p>
+                    <ul class="list-disc list-inside text-sm space-y-1">
+                        <li>Calculations &amp; 2D schematics</li>
+                        <li>Coordinated Revit models</li>
+                        <li>Clash avoidance reports</li>
+                    </ul>
+                </article>
+
+                <!-- Duplicate & edit cards as needed -->
+                <article class="border rounded-lg p-6 shadow hover:shadow-lg transition">
+                    <i data-feather="tool" class="w-6 h-6 mb-3 text-green-600"></i>
+                    <h4 class="text-xl font-semibold mb-2">BIM Authoring</h4>
+                    <p class="text-sm mb-4">Authoritative Revit models built to UK BIM Level 2 standards.</p>
+                    <ul class="list-disc list-inside text-sm space-y-1">
+                        <li>LOD 300-400 models</li>
+                        <li>COBie data sheets</li>
+                        <li>Asset tagging</li>
+                    </ul>
+                </article>
+
+                <!-- …continue for each service …-->
+            </div>
+        </section>
+
+        <section id="projects" class="section-offset">
+            <h3 class="text-2xl font-bold mb-8">Recent Projects</h3>
+
+            <div class="grid gap-8 lg:grid-cols-3 md:grid-cols-2">
+                <!-- Card -->
+                <article class="group relative overflow-hidden rounded-lg shadow-lg">
+                    <img src="images/project1.jpg" alt="Project One render"
+                         class="h-56 w-full object-cover transition duration-300 group-hover:scale-105" />
+                    <div class="p-6 bg-white">
+                        <h4 class="text-xl font-semibold mb-1">Central London Office Fit-out</h4>
+                        <p class="text-sm text-gray-600 mb-4">Full MEP design & BIM coordination on a 12-storey Cat-A refurbishment.</p>
+                    </div>
+                </article>
+
+                <!-- Duplicate & customise as needed -->
+            </div>
+
+        </section>
+
+        <section id="contact" class="section-offset">
+            <h3 class="text-2xl font-bold mb-8">Get in Touch</h3>
+
+            <div class="max-w-xl space-y-6">
+                <!-- Details block -->
+                <div class="space-y-4">
+                    <p class="text-lg">
+                        Let’s discuss how we can support your next project.
+                        Use the form below and we’ll respond promptly.
+                    </p>
+                </div>
+
+                <!-- Contact form -->
+                <form id="contact-form"
+                      action="https://submit-form.com/__FORMSPARK_ID__"
+                      method="POST"
+                      data-ajax="true"
+                      class="space-y-4">
+
+                    <!-- Honeypot (spam trap). Humans won't fill this; bots might. -->
+                    <input type="text" name="_gotcha" class="hidden" tabindex="-1" autocomplete="off" aria-hidden="true" />
+
+                    <input type="text" name="name" required placeholder="Your name"
+                           class="w-full rounded border p-3" autocomplete="name" />
+
+                    <input type="email" name="email" required placeholder="Email address"
+                           class="w-full rounded border p-3" autocomplete="email" />
+
+                    <textarea name="message" rows="4" required placeholder="How can we help?"
+                              class="w-full rounded border p-3" autocomplete="off"></textarea>
+
+                    <button id="contact-submit" type="submit"
+                            class="w-full bg-green-700 hover:bg-green-800 text-white font-medium py-2 rounded">
+                        Send Message
+                    </button>
+
+                    <!-- Inline status (no redirect) -->
+                    <p id="contact-status" class="text-sm hidden" aria-live="polite"></p>
+                </form>
+
+                <div id="contact-success" class="hidden text-green-700">
+                    Thanks — we’ll be in touch shortly.
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-300 text-sm p-4 text-center leading-relaxed">
+        © 2026 MEP1BIM Ltd · Company No. 13503330 · VAT Reg No. GB401474629<br>
+        Registered office: 71–75 Shelton Street, Covent Garden, London, WC2H 9JQ, United Kingdom
+        · <a href="/privacy.html" class="underline">Privacy Policy</a>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+</html>

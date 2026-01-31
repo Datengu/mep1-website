@@ -1,0 +1,120 @@
+﻿body
+{
+}
+
+.nav-link {
+    display: inline-block;
+    position: relative;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: #166534; /* Tailwind's green-800 */
+}
+
+.nav-link.active::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 100%;
+    height: 2px;
+    background-color: #166534;
+    border-radius: 1px;
+}
+
+.hero-background {
+    background-image: url('../images/hero-bg.png');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    z-index: 0;
+    isolation: isolate;
+}
+
+.hero-background::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: inherit;
+    filter: blur(3px);
+    z-index: -1;
+}
+
+.section-offset {
+    scroll-margin-top: 140px; /* matches current nav height and includes breathing room */
+}
+
+/* Mobile ticker for "Projects supported" chips */
+.ticker {
+    position: relative;
+    overflow: hidden; /* no user scroll */
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 10px;
+    padding: 6px 0;
+    user-select: none;
+}
+
+.ticker-track {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    white-space: nowrap;
+    width: max-content;
+    padding: 2px 24px; /* keeps chips out of the fade zone */
+    will-change: transform;
+    animation: ticker-scroll var(--ticker-duration, 20s) linear infinite;
+}
+
+.ticker-chip {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 9999px;
+    background: rgb(248, 250, 252); /* slate-50 */
+    color: rgb(30, 41, 59); /* slate-800 */
+    border: 1px solid rgb(226, 232, 240); /* slate-200 */
+    font-size: 12px;
+    opacity: 1;
+}
+
+/* Pause on hover (desktop only) */
+@media (hover: hover) {
+    .ticker:hover .ticker-track {
+        animation-play-state: paused;
+    }
+}
+
+@keyframes ticker-scroll {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* Edge fades */
+.ticker::before,
+.ticker::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 24px;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.ticker::before {
+    left: 0;
+    background: linear-gradient(to right, rgba(255,255,255,0.95), rgba(255,255,255,0));
+}
+
+.ticker::after {
+    right: 0;
+    background: linear-gradient(to left, rgba(255,255,255,0.95), rgba(255,255,255,0));
+}
+
+/* Reduced motion: stop animation entirely */
+/*@media (prefers-reduced-motion: reduce) {
+    .ticker-track {
+        animation: none;
+        transform: none;
+    }
+}*/
